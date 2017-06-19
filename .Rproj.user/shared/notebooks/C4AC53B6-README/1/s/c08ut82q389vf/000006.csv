@@ -1,0 +1,5 @@
+"0","#長條圖//這裡要+"
+"0","qplot(Month, data = Air_Tidy.s, geom = ""bar"", weight = PM2.5) + facet_grid(.~Station)+"
+"0","  xlab(""月份"")+ylab(""PM2.5"")+"
+"0","  geom_bar(stat = 'count', fill = 'orange', colour = 'red')+ theme_bw()+"
+"0","  theme(text=element_text(family=""wqy-microhei""))"

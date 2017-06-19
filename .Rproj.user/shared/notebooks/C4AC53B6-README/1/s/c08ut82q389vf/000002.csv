@@ -1,0 +1,97 @@
+"0","##‰ΩúÂúñ‰∫ãÂâçÊ∫ñÂÇô"
+"0","library(gplots)"
+"2","package °•gplots°¶ was built under R version 3.3.3"
+"2","
+Attaching package: °•gplots°¶
+
+"
+"2","The following object is masked from °•package:stats°¶:
+
+    lowess
+
+"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","library(tidyverse)"
+"2","package °•tidyverse°¶ was built under R version 3.3.3"
+"2","Loading tidyverse: tibble
+Loading tidyverse: tidyr
+Loading tidyverse: purrr
+"
+"2","package °•tibble°¶ was built under R version 3.3.3"
+"2","package °•tidyr°¶ was built under R version 3.3.3"
+"2","package °•purrr°¶ was built under R version 3.3.3"
+"2","Conflicts with tidy packages -----------------------------------------------------------------------------------------------------
+"
+"2","filter(): dplyr, stats
+lag():    dplyr, stats
+"
+"0","library(maps)"
+"2","package °•maps°¶ was built under R version 3.3.3"
+"2","
+Attaching package: °•maps°¶
+
+"
+"2","The following object is masked from °•package:purrr°¶:
+
+    map
+
+"
+"0","library(maptools)"
+"2","package °•maptools°¶ was built under R version 3.3.3"
+"2","Loading required package: sp
+"
+"2","package °•sp°¶ was built under R version 3.3.3"
+"2","Checking rgeos availability: TRUE
+"
+"0","library(reshape2)"
+"2","package °•reshape2°¶ was built under R version 3.3.3"
+"2","
+Attaching package: °•reshape2°¶
+
+"
+"2","The following object is masked from °•package:tidyr°¶:
+
+    smiths
+
+"
+"0","library(tidyr)"
+"0","library(ggplot2)"
+"0","library(showtext)"
+"2","package °•showtext°¶ was built under R version 3.3.3"
+"2","Loading required package: sysfonts
+"
+"2","package °•sysfonts°¶ was built under R version 3.3.3"
+"0","showtext.auto(enable = TRUE)"
+"0","##Èï∑ËΩâÂØ¨"
+"0","Air_Tidy.s <- spread(Air_Tidy, Item, Mean)"
+"0","##ÂØ¨ËΩâÈï∑"
+"0","Air_Tidy.m <- melt(Air_Tidy, id.vars = c(""Station"",""Month"",""Item""))"
+"0","#ÈõôËÆäÈáè----PM10Ë∑üPM2.5ÁöÑÁõ∏ÈóúÊÄßÔºåË≥áÊñôË∂ÖÈÅé30Á≠ÜÁúãËµ∑‰æÜ‰ºº‰πéÊúâÁõ∏Èóú"
+"0","cor(Air_Tidy.s$PM10,Air_Tidy.s$PM2.5)"
+"1","[1]"
+"1"," 0.5141622"
+"1","
+"
+"0","#Êï£‰ΩàÂúñ(ÊòØÂê¶PM10Ë∂äÈ´òÂâáPM2.5Ë∂äÈ´òÔºåÂõ†ÁÇ∫PM10ÂåÖÂê´2.5)"
+"0","ggplot(data=Air_Tidy.s) +   "
+"0","    # Êï£Â∏ÉÂúñÂ∞çÊáâÁöÑÂáΩÂºèÊòØgeom_point()"
+"0","    geom_point(aes(x=PM2.5,  # Áî®aes()ÔºåÊèèÁπ™Êï£Â∏ÉÂúñÂÖßÁöÑÂêÑÁ®ÆÂ±¨ÊÄß"
+"0","                   y=PM10,"
+"0","                   color=Month"
+"0","                   )"
+"0","               )+"
+"0","  # Áî®geom_smooth()Âä†‰∏äË∂®Âã¢Á∑ö"
+"0","  geom_smooth(aes(x=PM2.5,"
+"0","                  y=PM10),method='lm') +"
+"0","  scale_color_continuous(low = ""lightblue"",high = ""darkblue"")+"
+"0","  # Áî®labs()ÔºåÈÄ≤Ë°åÊñáÂ≠ó‰∏äÁöÑÊ®ôË®ª(Annotation)"
+"0","  labs(title=""Scatter of PM10-PM2.5"","
+"0","         x=""PM2.5"","
+"0","         y=""PM10"") + theme_bw()+"
+"0","  theme(text=element_text(family=""wqy-microhei""))"
